@@ -104,5 +104,11 @@
         "symfony/phpunit-bridge": "^7.0",
         "symfony/stopwatch": "7.0.*",
         "symfony/web-profiler-bundle": "7.0.*"
+    },
+    "allow-plugins": {
+        "symfony/flex":                         true,
+        "symfony/runtime":                      true,
+        "composer/package-versions-deprecated": true,
+        "phpstan/extension-installer": true
     }
 }
