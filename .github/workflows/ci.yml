@@ -29,7 +29,12 @@ jobs:
       run: |
         curl -sS https://get.symfony.com/cli/installer | bash
         mv /home/runner/.symfony5/bin/symfony /usr/local/bin/symfony
-      # CHeck des vulnérabilités
+    # CHeck des vulnérabilités
     - name: Symfony check Vulnerabilities
       run: symfony check:security
+    # PHP CS FIXER
+    - name: PHP-CS-FIXER
+      run: |
+        composer require friendsofphp/php-cs-fixer
+        ./vendor/bin/php-cs-fixer fix --dry-run
           
