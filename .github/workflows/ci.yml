@@ -12,7 +12,18 @@ jobs:
       uses: shivammathur/setup-php@2.30.2
       with:
         extensions: mbstring, xml, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json
+    - name: Cache multiple paths
+      uses: actions/cache@v4.0.2
+      with:
+        # On met les vendirs en cache. Pour éviter que ce soit rafraîchir à chq fois, ajout de la clé key.
+        # Rafraichissement du cache si et seult si le composer.lock a changé
+        path: 
+          vendor
+        key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
+              
+    - name: "Composer install"
+      run: composer install --no-interaction --no-progress
         
     - name: LS
       run: ls
-              
+          
