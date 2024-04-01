@@ -28,7 +28,7 @@ jobs:
     # le pipe | permet d'enchaîner plusieurs commandes
       run: |
         curl -sS https://get.symfony.com/cli/installer | bash
-        mv /home/runner/.symfony5/bin/symfony
+        mv /home/runner/.symfony5/bin/symfony /usr/local/bin/symfony
       # CHeck des vulnérabilités
     - name: Symfony check Vulnerabilities
       run: symfony check:security
