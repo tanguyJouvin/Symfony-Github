@@ -8,5 +8,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    - name: Setup PHP Action, extensions and composer
+      uses: shivammathur/setup-php@2.30.2
+      with:
+        extensions: mbstring, xml, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json
+        
     - name: LS
       run: ls
+              
